@@ -18,6 +18,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @comment = BookComment.new
+    current_user.counts.create(book_id: @book.id)
   end
   
   def create
