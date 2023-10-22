@@ -17,6 +17,10 @@ class User < ApplicationRecord
   has_many :relationships, class_name: "Relationship",foreign_key: "follower_id"
   has_many :followings, through: :relationships ,source: :followee
   
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
+  
+  
   def follow(another_user)
     unless self == another_user
       self.relationships.find_or_create_by(followee_id: another_user.id)

@@ -1,0 +1,31 @@
+<% @entries.each do |e| %>
+  <% if current_user != e.user %>
+    <h2><%= e.user.name %>さんとのチャット </h2>
+  <% end %>
+<% end %>
+
+<% if @messages.present? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>送信者</th>
+        <th>内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @messages.each do |m| %>
+        <tr>
+          <td><%= m.user.name %></td>
+          <td><%= m.message %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= form_with model: @message do |f|%>
+  <%= f.text_field :message %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit '投稿' %>
+<% end %>

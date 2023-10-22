@@ -2,7 +2,7 @@
   
   <div class='col-xs-3'>
     <h2>User info</h2>
-    <%= render 'info', user: @user,now: ''%>
+    <%= render 'info2', user: @user,isroom: @isroom ,room: @room,entry: @entry,roomid: @roomid %>
 
     <h2>New book</h2>
     <%= render 'books/form', book: @book %>
