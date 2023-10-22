@@ -1,0 +1,8 @@
+<h2><%= current_user==@user?"自分":@user.name%>がフォローしているリスト</h2>
+
+
+<% if @users.count == 0 %>
+<h3>ユーザーはいません。</h3>
+<% else %>
+<%= render 'index', users: @users %>
+<% end %>
