@@ -8,5 +8,8 @@ class Group < ApplicationRecord
   
   has_one_attached :group_image
   
+  def include_user?(user)
+    group_users.exists?(user_id: user.id)
+  end
   
 end
