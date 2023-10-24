@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="mx-auto">
+      <h3>Create Group</h3>
+      <%= form_with model: @group, method: :post do |f| %>
+        <div>
+          <%= f.label :グループ名 %>
+          <%= f.text_field :name %>
+        </div>
+        <div>
+          <%= f.label :紹介文 %>
+          <%= f.text_area :introduction %>
+        </div>
+        <div>
+          <%= f.label :グループ画像 %>
+          <%= f.file_field :group_image, accept: "image/*" %>
+        </div>
+        <div>
+          <%= f.submit 'Create Group', class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
