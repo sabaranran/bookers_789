@@ -1,0 +1,12 @@
+<div>
+  <tr>
+  <%= form_with url: tag_search_path, method: :get do |f| %>
+    <td>
+      <%= f.text_field :tag %>
+    </td>
+    <td>
+      <%= f.submit 'タグ検索' %>
+    </td>
+  <% end %>
+  </tr>
+</div>

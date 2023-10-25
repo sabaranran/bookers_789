@@ -67,6 +67,9 @@
       </nav>
     </header>
     <div class="container">
+      <% if user_signed_in? %>
+        <%= render 'tags/search' %>
+      <% end %>
       <p><%= notice %></p>
       <%= yield %>
     </div>
