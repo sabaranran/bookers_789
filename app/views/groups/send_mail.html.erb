@@ -1,0 +1,10 @@
+<div class="mx-auto">
+  <div>
+    <h3>送信が完了しました</h3>
+    <p>内容は以下の通りです。</p>
+    <p>[タイトル]</p>
+    <%= @mail_title %>
+    <p>[本文]</p>
+    <%= safe_join(@mail_content.split("\n"),tag(:br)) %>
+  </div>
+</div>

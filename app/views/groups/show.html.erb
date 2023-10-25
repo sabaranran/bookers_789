@@ -39,6 +39,9 @@
             <td>
               <%= link_to 'Edit', edit_group_path(@group),class: "btn btn-success" %>
             </td>
+            <td>
+              <%= link_to 'Notice an Event',group_new_mail_path(@group), class: "btn btn-primary" %>
+            </td>
             <% elsif @group.include_user?(current_user) %>
               <td>
                 <%= link_to 'Leave this group', group_group_users_path(@group),method: :delete,class: "btn btn-danger" %>
